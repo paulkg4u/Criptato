@@ -1,0 +1,62 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>	
+
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new-sheet-group/{{groupID}}"><button class = "btn btn-success">Create New Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/add-member/{{groupID}}"><button class="btn btn-primary"> Add New Member</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+{% if groupName %}
+	<h4><b>Group Name:</b>{{groupName}}</h4>
+	<h5>Group Admin:{{admin}}</h5>
+	<div>
+	Sheets shared in this Group:
+	
+	{% if tables %}
+		<table class = "table-class">
+			<tr>
+				<th>Title</th><th>Description</th>
+			</tr>
+			{% for sheet in tables %}
+				<tr>
+					<td style = "padding-top:1vh;"><a href = "/app/edit-table/{{sheet.table_name.id}}">{{sheet.table_name}}</a><a href="/app/delete-group-table/{{sheet.table_name.id}}/"><button class = "btn btn-danger btn-xs" id = "delete-table" style="float:right; margin-right:5%; position:relative;">Delete</button></a></td>
+				<td>
+				{{sheet.table_name.table_desc}}
+				</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+	</div>
+{% endif %}
+
+
+
+	
+</div>
+</div>
+{% endblock %}

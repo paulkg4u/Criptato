@@ -1,0 +1,79 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>	
+
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+	<h4>
+	<p>
+		Here are your most recent tables....
+	</p>
+	
+	</h4>
+	<div style = "height:38vh;" class = "table-class">
+		{% if sheetList %}
+		<table>
+		<tr><th>Title</th><th>Description</th></tr>
+		{% for item in sheetList %}
+			<tr>
+				<td style = "padding-top:1vh;"><a href = "/app/edit-table/{{item.id}}">{{item.table_name}}</a><a href="/app/delete-table/{{item.id}}/"><button class = "btn btn-danger btn-xs" id = "delete-table" style="float:right; margin-right:5%; position:relative;">Delete</button></a></td>
+				<td>
+				{{item.table_desc}}
+				</td>
+				
+			</tr>
+		{% endfor %}
+		</table>
+	{% endif %}
+	</div>
+	<h4>
+	<p>
+		Here are your groups....
+	</p>
+	</h4>
+	<div style = "height:38vh;" class = "table-class">
+		{% if groupList %}
+		<table>
+			<tr><th>Group Name</th><th>Group Description</th></tr>
+			{% for group in groupList %}
+			<tr>
+				<td style = "padding-top:1vh;"><a href = "/app/manage-group/{{group.id}}">{{group.group_name}}</a></td>
+				<td>{{group.group_desc}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+		
+	</div>
+		}
+	
+	
+</div>
+</div>
+{% endblock %}

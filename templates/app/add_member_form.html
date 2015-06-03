@@ -1,0 +1,59 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>	
+
+
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new-sheet-group/{{groupID}}"><button class = "btn btn-success">Create New Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/add-member/{{groupID}"><button class="btn btn-primary"> Add New Member</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+{% if groupName %}
+	<h4><b>Group Name:</b>{{groupName}}</h4>
+	<h5>Group Admin:{{admin}}</h5>
+	<div>
+	<h4>Add a new Member to this group</h4>
+      <form id = "add-new-member" action="/app/add-new-member/" method = "POST">
+            {% csrf_token %}
+            <div style="padding-bottom:50px;">
+                  <div class = "form-group" style = "position:relative;">
+                  <label for = "new-member">Username:</label><br>
+                  <input type = "text" name = "username" cols = "70">
+                  <input type = "hidden" name = "groupID" value = "{{groupID}}">
+                  </div>
+                  <button class = "btn btn-success" id = "add-member-button">Add Member</button>
+            </div>
+
+      </form>
+	</div>
+{% endif %}
+
+
+
+	
+</div>
+</div>
+{% endblock %}

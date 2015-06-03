@@ -1,0 +1,120 @@
+html{
+	font-family: "Times New Roman", Times, serif;
+}
+.container-fluid{
+	padding-left: 0px;
+	padding-right: 0px;
+
+}
+#login-forms{
+	height: 100vh;
+	padding-top:15%;
+	background-color: #CEDEDE;
+
+	font-family: "Times New Roman", Times, serif;
+	
+}
+#sign-up-forms{
+	height: 100vh;
+	padding-top:15%;
+	background-color: #CEDEDE;
+
+	font-family: "Times New Roman", Times, serif;
+	
+
+}
+#login-page-main-div{
+	background-image: url("../images/back.png");
+	height: 100vh;
+	 
+}
+#login-backgroud{
+	background-image: inherit;
+
+}
+#inside-div-sign{
+	
+	position: fixed;
+	width: 160px;
+	top: 30%;
+	left: 50%;
+	margin-left: -80px;
+
+
+}
+#inside-div-sign{
+	position: relative;	
+	width:260px;
+	left:50%;
+	margin-left:-130px;
+	top: 0%;
+}
+.forms-width-setter{
+	width:120px;
+}
+.side-panel-items{
+	margin-top: 10px; 
+	border-radius: 5px;
+	border-color: black;
+	list-style: none;
+	width: 100%;
+	
+	padding-left: 3%;
+	
+}
+#left-sidebar{
+	padding-top: 20px;
+	background-color: #C1E1A6;
+	height:100vh;
+	
+
+}
+.side-panel-items:hover {
+	
+	border-radius: 5px;
+	background-color: grey;
+	
+	text-decoration: none;
+}
+#side-panel-buttons{
+	margin-top: 25px;
+}
+
+.col-md-10{
+	position: relative;
+	height: 100vh;
+	background-color:#F5F3EE; 
+	padding-top: 5%;
+}
+#sheet-container{
+	position: relative;
+	
+	height:64vh;
+	width: 96%;
+	
+	margin-left: 2%;
+	margin-right: 2%;
+	overflow:auto; 
+
+}
+#text-container{
+	position: relative;
+	
+	height:64vh;
+	width: 96%;
+	
+	margin-left: 2%;
+	margin-right: 2%;
+	overflow:auto; 
+
+}
+.make-square{
+	float: left;
+	height:4vh;
+	width:10vw;
+	border-radius: 0px;
+}
+.table-class th{
+	width:30vw;
+
+}

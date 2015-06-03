@@ -1,0 +1,64 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>      	
+
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+	<div style = "padding:3%;">
+            <h3 style = "color:red;">About Us</h3>
+            <div id = "text-container" style="width:70vw; line-height:2.0;">
+            <p style="text-align:justify;">
+                  &nbsp; We are a team of 5 members from College of Engineering, Chengannur. We created this application as our academic main-project. We did this project under the guidance of <strong>Ms. Manjusha S. Nair</strong>.
+                  <table>
+                        <tr ><td style = "padding-bottom:3vh;">
+                        <strong>Manjusha S. Nair</strong><br>Professor<br>College of Engineering, Chengannur
+                        </td><td style ="width=45vw; padding-left:5vw; padding-bottom:3vh;"><strong>Paul K.George</strong><br>
+                        Student<br>College of Engineering Chengannur</td></tr>
+                        <tr><td style = "width = 45vw; padding-bottom:3vh;">
+                        <strong>Aswathy B.Lal</strong><br>Student<br>College of Engineering, Chengannur
+                        </td><td style ="width=45vw; padding-left:5vw; padding-bottom:3vh;"><strong>Renju Koshy</strong><br>
+                        Student<br>College of Engineering Chengannur</td></tr>
+                        <tr><td style = "width = 45vw; padding-bottom:3vh;"><strong>
+                        Nithin Prasad</strong><br>Student<br>College of Engineering, Chengannur
+                        </td><td style ="width=45vw; padding-left:5vw; padding-bottom:3vh;"><strong>R. Gopika Nair</strong><br>
+                        Student<br>College of Engineering Chengannur</td></tr>
+                        
+                  </table> 
+
+
+
+            </p>
+            
+
+            </div>
+      </div>
+	
+</div>
+</div>
+{% endblock %}

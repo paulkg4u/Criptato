@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block page_body %}
+<div id= "login-page-main-div">
+<div id = "login-background" class = "col-md-7">
+	
+</div>
+
+<div id = "login-forms" class = "col-md-5">
+	<div id = "inside-div-sign">
+	<h1> Login</h1>
+	<form method = "post" action = ".">
+	{% csrf_token %}
+	<div class = "forms-width-setter">
+	{{ form.as_p }}
+	<input type = "submit" value = "Log In"/>
+	<input type="hidden" name = "next" value = "{{next}}"> 
+	</div>
+
+	</form>
+	
+<p>Not a member ?<a href="{% url 'registration_register' %}">Register</a>!</p>
+</div>
+</div>
+</div>
+{% endblock %}

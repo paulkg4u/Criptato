@@ -1,0 +1,79 @@
+{% extends  'main.html' %}
+
+{% block page_body %}
+
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+	<form id = "create-table-form" action = "/app/save-new-table/" method = "POST">
+      {% csrf_token %}
+      <div style = "padding-bottom:50px;">
+      <div class = "form-group" style="postion:relative;">
+            <label for ="sheet-title">Sheet Name</label>
+            
+            <input style = "margin-left:2%;" type = "text" name = "sheet-title" cols="70">
+
+      </div>
+      <div class = "form-group" style="postion:relative;">
+            <label for="sheet-desc">Sheet Description</label><br>
+            <textarea class = "form-control" name = "sheet-desc" rows = "1" style = "width:40%; float:left;"></textarea>
+            
+      </div>
+      <button class = "btn btn-success" id = "create-table-button" style="float:right; margin-right:5%; postion:relative;">Save</button>
+      </div>
+
+      
+
+	<div id = "sheet-container" style="postion:relative;">
+            <div id= "sheet-holder" style="width:270vw; height:404vh;overflow:hidden;position:relative;">
+            </div>
+
+      
+      </div>
+      </form>
+</div>
+<script>
+var x = "";
+
+var colhead="<input type = \"text\" class = \"make-square\" name = \"none\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"\" ><input type = \"text\" class = \"make-square\" name = \"A\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"A\" ><input type = \"text\" class = \"make-square\" name = \"B\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"B\" ><input type = \"text\" class = \"make-square\" name = \"C\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"C\" ><input type = \"text\" class = \"make-square\" name = \"D\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"D\" ><input type = \"text\" class = \"make-square\" name = \"E\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"E\" ><input type = \"text\" class = \"make-square\" name = \"F\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"F\" ><input type = \"text\" class = \"make-square\" name = \"G\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"G\" ><input type = \"text\" class = \"make-square\" name = \"H\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"H\" ><input type = \"text\" class = \"make-square\" name = \"I\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"I\" ><input type = \"text\" class = \"make-square\" name = \"J\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"J\" ><input type = \"text\" class = \"make-square\" name = \"K\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"K\" ><input type = \"text\" class = \"make-square\" name = \"L\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"L\" ><input type = \"text\" class = \"make-square\" name = \"M\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"M\" ><input type = \"text\" class = \"make-square\" name = \"N\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"N\" ><input type = \"text\" class = \"make-square\" name = \"O\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"O\" ><input type = \"text\" class = \"make-square\" name = \"P\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"P\" ><input type = \"text\" class = \"make-square\" name = \"Q\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"Q\" ><input type = \"text\" class = \"make-square\" name = \"R\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"R\" ><input type = \"text\" class = \"make-square\" name = \"S\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"S\" ><input type = \"text\" class = \"make-square\" name = \"T\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"T\" ><input type = \"text\" class = \"make-square\" name = \"U\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"U\" ><input type = \"text\" class = \"make-square\" name = \"V\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"V\" ><input type = \"text\" class = \"make-square\" name = \"W\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"W\" ><input type = \"text\" class = \"make-square\" name = \"X\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"X\" ><input type = \"text\" class = \"make-square\" name = \"Y\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"Y\" ><input type = \"text\" class = \"make-square\" name = \"Z\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = \"Z\" >";
+
+
+
+
+for (var i = 0; i <=100 ; i++) {
+      
+
+x=x+"<input type = \"text\" class = \"make-square\" name = \""+("row"+i)+"\" style=\"padding-left:4vw;\" disabled=\"disabled\" value = "+i+"><input type = \"text\" class = \"make-square read-value\" name = \""+("A"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("B"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("C"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("D"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("E"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square\" name = \""+("F"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("G"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("H"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("I"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("J"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("K"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("L"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("M"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("N"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("O"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("P"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("Q"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("R"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("S"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("T"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("U"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("V"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("W"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("X"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("Y"+i)+"\" style=\" height:4vh;float:left; width:10vw;\"><input type = \"text\" class = \"make-square read-value\" name = \""+("Z"+i)+"\" style=\" height:4vh;float:left; width:10vw;\">";
+
+}
+var y=colhead+x
+document.getElementById('sheet-holder').innerHTML=y;
+
+</script>
+{% endblock %}
+

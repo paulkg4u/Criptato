@@ -1,0 +1,89 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li>
+</div>	
+
+ <div id = "side-panel">
+      <li class="side-panel-items dropdown">
+      <a  href= "#" style = "text-decoration:none;"  class="dropdown-toggle" data-toggle="dropdown">Manage tables<b class="caret"></b></a>
+      <ul class =  "dropdown-menu removemargin">
+      <li class=""><a class = "blog-nav-item" href = "#">Table-1</a></li>
+      <li class=""><a class = "blog-nav-item" href = "#">Table-2</a></li>
+      <li class=""><a class = "blog-nav-item" href = "#">Table-3</a></li>
+      </ul>
+      </li>
+      
+      <li class="side-panel-items dropdown">
+      <a  href= "#" style = "text-decoration:none;" class="dropdown-toggle" data-toggle="dropdown">Manage Groups<b class="caret"></b></a>
+      <ul class =  "dropdown-menu removemargin">
+      <li class=""><a class = "nav-item" href = "#">Group-1</a></li>
+      <li class=""><a class = "blog-nav-item" href = "#">Group-2</a></li>
+      <li class=""><a class = "blog-nav-item" href = "#">Group-3</a></li>
+      </ul>
+      </li>
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+
+<div id ="disclaimer">
+	<p>
+	<strong>
+		Disclaimer:
+	</strong>
+	This page is created only for development purpose and is not a part of the Criptato application.
+	</p>
+	<p>
+		You can refer to this page to understand how the encryprtion in Criptato is done.
+	</p>
+	
+	Cell Name : {{title}}
+	<br>
+	Data from client : You should know that !!
+	<br>
+	Key used at client side : And that too....
+	<br>
+	    
+	Cipher reaching server : {{from_client}}
+	<br>
+	Key One : {{key1}}
+	<br>
+	Key Two : {{key2}}
+	<br>
+	Master Key : {{master_key}}	
+	<br>
+	Cipher : {{cipher}}
+	<br>
+	Mod value: {{mod_val}}
+	<br>
+	Final Cipher : {{final_cipher}}
+	<br>
+	
+	<br>
+	<a href = "/app/"><button class = "btn btn-success">Got It !! </button></a> 
+</div>
+	
+	
+	
+	
+	
+</div>
+</div>
+{% endblock %}

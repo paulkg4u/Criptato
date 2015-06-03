@@ -1,0 +1,54 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>
+
+ <div id = "side-panel">
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+	     
+
+           <form id = "create-group-form" action = "/app/create-new-group/" method="POST">
+                 {% csrf_token %}
+                 <div style = "padding-bottom:50px;">
+                 <div class = "form-group" style="position:relative;">
+                 <label for="group-name">
+                       Group Name
+                 </label><br>
+                 <input  type = "text" name = "group-name" cols="70">
+                 </div>
+                 <div class = "form-group" style = "position:relative;">
+                 <label for = "group-desc">Group Description</label><br>
+                 <textarea class = "form-control" name = "group-desc" rows = "1" style = "width:40%;"></textarea>
+                 </div>
+                 <br>
+                 <button class = "btn btn-success" id = "create-group-button">Create group</button>
+                       
+                 </div>
+                 
+           </form>
+	
+</div>
+{% endblock %}

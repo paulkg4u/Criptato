@@ -1,0 +1,55 @@
+{% extends  'main.html' %}
+{% block page_body %}
+<div id = "row">
+<div id ="left-sidebar" class = "col-md-2">
+<h4>Dashboard</h4>
+<div class= "side-panel-items"><li>
+<a style = "text-decoration:none"; href="/app/">Home</a></li></div>
+<div class = "side-panel-items">
+<li>
+
+<a style = "text-decoration:none"; href="/app/">Account</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/how/">How it Works !</a></li></div>
+<div class = "side-panel-items"><li><a  style = "text-decoration:none;" href="/app/about/">About Us</a></li>
+</div>		
+
+ <div id = "side-panel">
+      
+      
+      
+      <div id="side-panel-buttons">
+      <p>
+      <br>
+      <a href = "/app/new_sheet"><button class = "btn btn-success">Create Table</button></a>
+      </p>
+      <p>
+      <a href = "/app/new_group"><button class="btn btn-primary"> Create Group</button></a>
+      </p>
+      </div>
+      </div>
+
+</div>
+<div class = "col-md-10">
+	<div style = "padding:3%;">
+		<h3 style = "color:red;">How it works</h3>
+		<div id = "text-container" style="width:70vw; line-height:2.0;">
+		<p style="text-align:justify;">
+			&nbsp; CRIPTATO is an online spreadsheet application that provides extra security to your data. The system uses a highly secure process which
+			encrypts your data at client side, sends it to server through a secure channel using SSL and encrypts the data again at the server. The advantage of this method is that since data is encrypted multiple times it can prevent massive bruteforce attacks, because the attacker cannot understand whether the decryption process was successful. The data entered at each cell is encrypted using Triple-DES algorithm before transmiting to server. The user is prompted to enter a secret key for each spreadsheet before saving it. The user can view the actual data only if he/she enters the correct key at the time of fetching it back.
+
+
+
+		</p>
+		<p style="text-align:justify;">&nbsp; At the server side, we implemented an extension of AES (Advanced Encryption Standards) to encrypt the data. Unlike normal AES encryptions, here the key used for encryption is mixed with the cipher text and stored in the database. The selection of key is of keen importance. A text phrase is selected from the cipher text which is coming from client and is mixed with a key already defined in the algorithm. This mixing generate s a super key which is used to encrypt the message. After encryption another the key is mixed with the cipher-text obtained. To determine how the mixing is to be done, we take a particular character from the cipher-text, determine a set of index positions to store the keys. Currently we have impemented five different sets of index positions to store the key. Data from each cell is encrypted this way and stored. The reverse of the algorithm is performed for retreiving data and sending back to client.
+		</p>
+		<p style = "text-align:justify;">&nbsp; CRIPTATO also permits you sharing of spreadsheet through groups. You should have a key known by all group members for sharing a spreadsheet in a group.
+		<br>
+		The algorithm can be modified and can be used to develop any applications which implements text data security. The developers are free to update the algorithm or index patterns used according to your wish and we <strong>appreciate </strong>  any such attempt.</p>
+		<h4>Thank You!</h4>
+
+		</div>
+	</div>
+	
+</div>
+</div>
+{% endblock %}

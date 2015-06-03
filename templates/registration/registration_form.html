@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block page_body %}
+<div id= "login-page-main-div">
+<div id = "login-background" class = "col-md-7">
+	
+</div>
+
+<div id = "sign-up-forms" class = "col-md-5">
+	<div id = "inside-div-sign">
+	<h1>Sign Up</h1>
+	<form action = "." method="post">
+		{% csrf_token %}
+		<div class="forms-width-setter">
+		{{ form.as_p }}
+		<input type = "submit" value="Submit"/>
+		</div>
+	</form>
+	</div>
+
+</div>
+
+
+</div>
+{% endblock %}
